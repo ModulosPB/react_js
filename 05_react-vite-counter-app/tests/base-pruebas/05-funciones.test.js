@@ -1,0 +1,34 @@
+import { getUser, getUsuarioActivo } from '../../src/base-pruebas/05-funciones';
+
+
+describe('Pruebas en 05-funciones', () => {
+    
+    test('getUser debe de retornar un objecto', () => {
+        
+        const testUser = {
+            uid: 'ABC123',
+            username: 'El_Papi1502'
+        };
+        
+        const user = getUser();
+        //cuando trabajamos con objetos se usa toEqual o toStrictEqual
+        // tobe es para primitivos
+        expect( testUser ).toEqual( user );
+
+    });
+
+
+    test('getUsuarioActivo debe de retornar un objeto', () => {
+        
+        const name = 'Fernando';
+
+        const user = getUsuarioActivo( name );
+        
+        expect( user ).toStrictEqual({
+            uid: 'ABC567',
+            username: name
+        });
+
+    });
+
+});
