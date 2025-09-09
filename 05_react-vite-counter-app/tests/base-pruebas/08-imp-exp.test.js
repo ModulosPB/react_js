@@ -13,29 +13,26 @@ describe('Pruebas en 08-imp-exp', () => {
     });
 
     test('getHeroeById debe de retornar undefined si no existe', () => {
-        
         const id = 100;
         const hero = getHeroeById( id );
-        expect( hero ).toBeFalsy();
-
+        // expect( hero ).toBe( undefined ); //este no cubre nulo
+        expect( hero ).toBeFalsy(); //null, undefined o false
     });
 
 
     // Tarea:
     test('getHeroesByOwner debe de regresar heroes de DC', () => {
-        
         const owner = 'DC';
         const heroes = getHeroesByOwner( owner );
 
         expect( heroes.length ).toBe( 3 );
+        // este tiene el problema que si cambian falla
         expect( heroes ).toEqual([
             { id: 1, name: 'Batman', owner: 'DC' },
             { id: 3, name: 'Superman', owner: 'DC' },
             { id: 4, name: 'Flash', owner: 'DC' }
         ]);
         expect( heroes ).toEqual( heroes.filter( (heroe) => heroe.owner === owner ) )
-
-
     });
 
     test('getHeroesByOwner debe de regresar heroes de Marvel', () => {
@@ -45,8 +42,6 @@ describe('Pruebas en 08-imp-exp', () => {
 
         expect( heroes.length ).toBe( 2 );
         expect( heroes ).toEqual( heroes.filter( (heroe) => heroe.owner === owner ) )
-        
-
     });
     
 });

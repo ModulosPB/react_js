@@ -2,7 +2,8 @@ import { getHeroeByIdAsync } from '../../src/base-pruebas/09-promesas';
 
 
 describe('Pruebas en 09-promesas', () => {
-    
+    // se usa done para indicar a jest que espere a que termine la promesa
+    // y no termine la prueba antes de que se resuelva
     test('getHeroeByIdAsync debe de retornar un héroe', (done) => {
         
         const id = 1;
@@ -24,6 +25,8 @@ describe('Pruebas en 09-promesas', () => {
         
         const id = 100;
         getHeroeByIdAsync( id )
+        //no pasará por el then si no encuentra el héroe
+        //es decir, si hay ese héroe no pasaría el test
            .then( hero => {
                expect( hero ).toBeFalsy();
                done();
