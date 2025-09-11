@@ -1,0 +1,6 @@
+// export { default as GifGrid } from "./GifGrid"
+// export { default as GifItem } from "./GifItem"
+// export { default as Categoria } from "./Categoria"
+export * from "./Categoria"
+export * from "./GifGrid"
+export * from "./GifItem"

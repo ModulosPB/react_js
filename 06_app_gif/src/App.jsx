@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import { GifGrid } from './componentes/GifGrid'
-import { Categoria } from './Componentes/Categoria'
+// import { GifGrid } from './componentes/GifGrid'
+// import { Categoria } from './componentes/Categoria'
+import { GifGrid, Categoria } from './componentes' 
+// usando barril al importar desde index.js no hace falta poner la ruta completa
+//componente funcional
 // también se puede ver como
 // const App=() => {}
 function App() {
