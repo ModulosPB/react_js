@@ -1,17 +1,16 @@
-
-
 import { useState } from "react"
 
 export const useContador = (valorInicial = 0) => {
     const [contador, setContador] = useState(valorInicial)            
-    const incrementar = () => {         
-        setContador(contador + 1)
+    const incrementar = (salto=1) => {         
+        setContador(contador + salto)
     }
-    const decrementar = () => {         
-        setContador(contador - 1)
+    const decrementar = (salto=1) => {  
+      // if (contador === 0) return       
+        setContador(contador - salto)
     }
     const resetear = () => {
-       setContador(0)
+       setContador(valorInicial)
    }
 
   return {

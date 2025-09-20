@@ -4,7 +4,7 @@ import './index.css'
 import HooksApp from './HooksApp'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  // <StrictMode>
     <HooksApp/>
-  </StrictMode>,
+  // </StrictMode>,
 )
